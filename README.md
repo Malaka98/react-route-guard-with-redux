@@ -1,3 +1,9 @@
+# How to implement react route guard with redux and firebase authentication
+
+Backend: - https://github.com/Malaka98/Firebase_Authentication
+
+Username: - root@gmail.com
+Password: - 123456
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
