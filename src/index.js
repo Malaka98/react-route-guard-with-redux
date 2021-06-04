@@ -4,15 +4,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Provider, ReactReduxContext } from "react-redux";
-import configureStore, { history } from './Redux/Store'
+import { Provider } from "react-redux";
+import configureStore from './Redux/Store'
 
 const store = configureStore(/* provide initial state if any */)
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store} context={ReactReduxContext}>
-      <App history={history} context={ReactReduxContext}/>
+    <Provider store={store}>
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
