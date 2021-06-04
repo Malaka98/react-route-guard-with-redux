@@ -21,7 +21,7 @@ const userLogin = (fdata) => {
   return (dispatch) => {
     axios({
       method: "POST",
-      url: "http://localhost:4000/auth/singin",
+      url: "https://firebase-auth-expressapp.herokuapp.com/auth/singin",
       responseType: "json",
       data: fdata,
       withCredentials: true

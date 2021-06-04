@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Dashboard from "./Components/Dashboard/Dashboard";
 import RegPage from "./Components/RegPage/RegPage";
