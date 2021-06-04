@@ -20,7 +20,7 @@ export const fetchUsers = () => {
   return (dispatch) => {
     axios({
       method: "GET",
-      url: "https://firebase-auth-expressapp.herokuapp.com/auth/check",
+      url: "http://localhost:4000/auth/check",
       withCredentials: true
     })
       .then((res) => {
