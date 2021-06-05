@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import axios from 'axios';
 
 import { useHistory, useLocation } from "react-router-dom";
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
@@ -13,7 +14,7 @@ function Dashboard() {
   function useQuery() {
     return new URLSearchParams(useLocation().search);
   }
-  
+
   let query = useQuery();
 
   useEffect(() => {
@@ -29,8 +30,16 @@ function Dashboard() {
   }, []);
 
   function logout() {
-    sessionStorage.clear();
-    history.push("/login?logout=yes");
+    axios({
+      method: "GET",
+      url: "http://localhost:4000/auth/logout",
+    })
+      .then((res) => {
+        history.push("/login?logout=yes");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   return (

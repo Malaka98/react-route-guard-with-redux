@@ -1,5 +1,6 @@
 import axios from "axios";
-import { push } from "connected-react-router";
+import { createBrowserHistory } from "history";
+
 
 import { FETCH_USERS_FAILURE, FETCH_USERS_SUCCESS } from "./types";
 
@@ -24,7 +25,6 @@ const userLogin = (fdata) => {
       url: "http://localhost:4000/auth/singin",
       responseType: "json",
       data: fdata,
-      withCredentials: true
     })
       .then((res) => {
         const auth = res.data;
@@ -33,7 +33,8 @@ const userLogin = (fdata) => {
           dispatch(loginUserSuccess(auth));
         }
         if(auth.authorized_user) {
-          dispatch(push("/dashboard?uname=root"));
+          createBrowserHistory().push("/dashboard?uname=root");
+          window.location.reload();
         }
       })
       .catch((error) => {
