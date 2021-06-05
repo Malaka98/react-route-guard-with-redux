@@ -1,8 +1,6 @@
 import React from "react";
 
-import { Route, Switch } from "react-router-dom";
-import { ConnectedRouter } from "connected-react-router";
-import { history } from "./Redux/Store";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
 import Dashboard from "./Components/Dashboard/Dashboard";
 import RegPage from "./Components/RegPage/RegPage";
@@ -29,13 +27,13 @@ export default function Routes() {
   ];
 
   return (
-    <ConnectedRouter history={history}>
+    <Router>
       <Switch>
         {routes.map((route, i) => {
           return <RoutWithSubRoutes key={i} {...route} />;
         })}
       </Switch>
-    </ConnectedRouter>
+    </Router>
   );
 }
 
